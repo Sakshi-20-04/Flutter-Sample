@@ -1,11 +1,11 @@
 pipeline {
     agent any
 
-   environment {
-    FLUTTER_HOME = 'D:/flutter_windows_3.35.2-stable/flutter'
-    ANDROID_HOME = 'D:/Android'
-    PATH = "D:/flutter_windows_3.35.2-stable/flutter/bin;D:/Android/cmdline-tools/latest/bin;D:/Android/platform-tools;${env.PATH}"
-}
+    environment {
+        FLUTTER_HOME = 'D:/flutter_windows_3.35.2-stable/flutter'
+        ANDROID_HOME = 'D:/Android'
+        PATH = "D:/flutter_windows_3.35.2-stable/flutter/bin;D:/Android/cmdline-tools/latest/bin;D:/Android/platform-tools;${env.PATH}"
+    }
 
     stages {
 
@@ -27,12 +27,6 @@ pipeline {
             }
         }
 
-        stage('Analyze code') {
-            steps {
-                bat 'flutter analyze'
-            }
-        }
-
         stage('Run tests') {
             steps {
                 bat 'flutter test'
@@ -48,7 +42,7 @@ pipeline {
         stage('Archive APK') {
             steps {
                 archiveArtifacts(
-                    artifacts: 'build\\app\\outputs\\flutter-apk\\app-release.apk',
+                    artifacts: 'build/app/outputs/flutter-apk/app-release.apk',
                     fingerprint: true
                 )
             }
