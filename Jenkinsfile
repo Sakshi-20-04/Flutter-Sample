@@ -1,11 +1,11 @@
 pipeline {
     agent any
 
-    environment {
-        FLUTTER_HOME = 'D:\flutter_windows_3.35.2-stable\flutter'
-        ANDROID_HOME = 'D:\Android'
-        PATH = "${env.FLUTTER_HOME}\\bin;${env.ANDROID_HOME}\\cmdline-tools\\latest\\bin;${env.ANDROID_HOME}\\platform-tools;${env.PATH}"
-    }
+   environment {
+    FLUTTER_HOME = 'D:/flutter_windows_3.35.2-stable/flutter'
+    ANDROID_HOME = 'D:/Android'
+    PATH = "D:/flutter_windows_3.35.2-stable/flutter/bin;D:/Android/cmdline-tools/latest/bin;D:/Android/platform-tools;${env.PATH}"
+}
 
     stages {
 
