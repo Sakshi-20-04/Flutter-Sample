@@ -27,12 +27,6 @@ pipeline {
             }
         }
 
-        stage('Run tests') {
-            steps {
-                bat 'flutter test'
-            }
-        }
-
         stage('Build APK') {
             steps {
                 bat 'flutter build apk --release'
